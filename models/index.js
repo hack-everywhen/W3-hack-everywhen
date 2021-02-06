@@ -9,5 +9,6 @@ mongoose.set('debug', true);
 mongoose.connect('mongodb://localhost/map_crime', {useNewUrlParser: true});
 
 mongoose.Promise = Promise;
-
- module.exports = require("./report");
+exports.report = require("./report")
+exports.reporter = require("./reporter")
+module.exports = exports

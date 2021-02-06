@@ -1,4 +1,5 @@
-var Report = require("../models");
+var Models = require("../models");
+var Report = Models.report;
 const { report } = require("../routes/report");
 
 exports.getReport = function(req, res){

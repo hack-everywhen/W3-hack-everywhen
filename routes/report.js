@@ -1,7 +1,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
-var Report = require('../models');
+var models = require('../models');
+var report = models.report;
 var helpers = require('../helpers/report');
 
 router.route('/').get(helpers.getReport).post(helpers.createReport);
