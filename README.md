@@ -1,6 +1,6 @@
 # Team Contribution 
 1. Summit: Telegram bot using python.
-2. Sahil : MongoDB schema's
+2. Sahil : Backend (MongoDB schema's)
 3. Faraz : Frontend (map api)
 4. Mufaddal : Frontend (modal, form)
 
