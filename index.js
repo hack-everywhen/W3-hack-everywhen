@@ -37,7 +37,7 @@ app.post("/api/login", passport.authenticate("local", {
 }), function (req, res) { 
 });
     
-app.listen(8000, function() {
+app.listen(7000, function() {
 	console.log('Api server started');
 });
 

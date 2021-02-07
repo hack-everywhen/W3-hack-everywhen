@@ -9,10 +9,6 @@ var reporterSchema = new mongoose.Schema({
         type: String,
         required: "Email required"
     },
-    password : {
-        type: String,
-        required: "Password required"
-    },
     phone : {
         type: String,
         required: "Phone number required" 
