@@ -4,19 +4,35 @@
 
 .mapContainer {
   position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
 }
 
-.report-button {
-  position: absolute;
+.floating-buttons {
   right: 0;
+  position: absolute;
+  padding-top: 10px;
+  padding-right: 15px;
   z-index: 10;
 }
 
-.popup-earthquake {
-  position: absolute;
-  z-index: 10;
+.telegram-button {
+  padding-top: 5px;
+  height: 50px;
+  width: 50px;
 }
+.report-button {
+  height: 50px;
+  width: 50px;
+}
+
+
+/*.popup-earthquake {*/
+/*  position: absolute;*/
+/*  z-index: 10;*/
+/*}*/
