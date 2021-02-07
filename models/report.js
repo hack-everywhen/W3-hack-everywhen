@@ -1,6 +1,10 @@
 var mongoose = require("mongoose");
 
 var reportSchema = new mongoose.Schema({
+
+    reporterID : {
+        type: String
+    },
     type : {
         type: String,
         default: "Feature"
