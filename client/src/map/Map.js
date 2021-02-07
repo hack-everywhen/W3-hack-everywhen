@@ -1,8 +1,9 @@
 import React, {useEffect} from "react";
 import mapboxgl from "mapbox-gl";
-import reports from '../testData'
+import reports from '../testData';
+import axios from 'axios';
 
-// var data = {"type": "FeatureCollection", "features": reports}
+var data = {"type": "FeatureCollection", "features": reports}
 
 function Map(props) {
     const mapContainerRef = props.container;
@@ -30,7 +31,7 @@ function Map(props) {
                 /* Add a GeoJSON source containing place coordinates and information. */
                 "source": {
                     "type": "geojson",
-                    "data": {}
+                    "data": data
                 },
                 "layout": {
                     "icon-image": "Google_Maps_pin",
@@ -39,42 +40,49 @@ function Map(props) {
             });
         });
 
-        // map.on('click', function(e) {
-        //     var features = map.queryRenderedFeatures(e.point, {
-        //         layers: ['reports'] // replace this with the name of the layer
-        //     });
-        //
-        //     if (!features.length) {
-        //         return;
-        //     }
-        //
-        //     var feature = features[0];
-        //
-        //     var popup = new mapboxgl.Popup({ className: "popup-earthquake", offset: [0, -15] })
-        //         .setLngLat(feature.geometry.coordinates)
-        //         .setHTML(`<table>
-        //                         <tr>
-        //                             <td>Time</td>
-        //                             <td>:</td>
-        //                             <td>${feature.properties.time}</td>
-        //                         </tr>
-        //                         <tr>
-        //                             <td>Type</td>
-        //                             <td>:</td>
-        //                             <td>${feature.properties.type}</td>
-        //                         </tr>
-        //                         <tr>
-        //                             <td>Description</td>
-        //                             <td>:</td>
-        //                             <td>${feature.properties.description}</td>
-        //                         </tr>
-        //                     </table>
-        //                     <button type="button" >More Info</button>`)
-        //         .addTo(map);
-        // });
+        map.on('click', function(e) {
+            var features = map.queryRenderedFeatures(e.point, {
+                layers: ['reports'] // replace this with the name of the layer
+            });
+        
+            if (!features.length) {
+                return;
+            }
+        
+            var feature = features[0];
+        
+            var popup = new mapboxgl.Popup({ className: "popup-earthquake", offset: [0, -15] })
+                .setLngLat(feature.geometry.coordinates)
+                .setHTML(`<table>
+                                <tr>
+                                    <td>Time</td>
+                                    <td>:</td>
+                                    <td>${feature.properties.time}</td>
+                                </tr>
+                                <tr>
+                                    <td>Type</td>
+                                    <td>:</td>
+                                    <td>${feature.properties.type}</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td>:</td>
+                                    <td>${feature.properties.description}</td>
+                                </tr>
+                            </table>
+                            <button type="button" >More Info</button>`)
+                .addTo(map);
+        });
 
 
     });
+
+    // useEffect(() => {
+    //     let res = axios.get('http://localhost:7000/api/reports', {
+	// 				headers: { Accept: 'application/json' }
+	// 			});
+    //             console.log(res.data);
+    // }) 
 
     return (
         <div ref={mapContainerRef} className={"mapContainer"}/>

@@ -29,6 +29,11 @@ app.get('/', function(req, res){
 app.use('/api/reports', ReportRoutes);
 app.use('/api/reporters', ReporterRoutes);
 app.use('/api/register',RegisterRoutes);
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 // app.use('/api/login', LoginRoutes);
 //Login Logic
 app.post("/api/login", passport.authenticate("local", { 

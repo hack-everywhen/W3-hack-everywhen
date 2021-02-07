@@ -3,7 +3,8 @@ var mongoose = require("mongoose");
 var reportSchema = new mongoose.Schema({
 
     reporterID : {
-        type: String
+        type: String,
+        default: "601ee822fd80bb19ec978358"
     },
     type : {
         type: String,
@@ -19,7 +20,10 @@ var reportSchema = new mongoose.Schema({
     properties : {
         description : {
             type: String
-        }
+        },
+        type : {
+            type: String
+        },
     }
 });
 

@@ -31,8 +31,7 @@
   width: 50px;
 }
 
-
-/*.popup-earthquake {*/
-/*  position: absolute;*/
-/*  z-index: 10;*/
-/*}*/
+.popup-earthquake {
+  position: absolute;
+  z-index: 10;
+}
