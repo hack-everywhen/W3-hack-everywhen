@@ -38,14 +38,14 @@ function ReportModal(props) {
             <Modal isOpen={modalISOpen} onRequestClose={()=> props.onRequestClose}>
                 <form>
                     <label>
-                        Name:
+                        Location:
                         <input type="text" name="name" />
                     </label>
                     <br/>
                     <br/>
                     Type of Emergency:
                     <select>
-                        <option selected value>Select....</option>
+                        <option selected value>Other</option>
                         <option value="robbery">Robbery</option>
                         <option value="fire">Fire</option>
                         <option  value="accident">Road Accident</option>

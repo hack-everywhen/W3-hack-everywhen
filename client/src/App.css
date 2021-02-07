@@ -15,3 +15,8 @@
   right: 0;
   z-index: 10;
 }
+
+.popup-earthquake {
+  position: absolute;
+  z-index: 10;
+}
