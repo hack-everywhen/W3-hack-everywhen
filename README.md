@@ -2,7 +2,7 @@
 hack-everywhen's submission for ApScript - A Crowdsourcing and Information System for emergencies
 
 ## Team Contribution 
-1. Summit: Telegram bot using python.
+1. Summit: Telegram bot using python. (https://github.com/hack-everywhen/crowdster-telegram-bot)
 2. Sahil : Backend (MongoDB schema's)
 3. Faraz : Frontend (map api)
 4. Mufaddal : Frontend (modal, form)
