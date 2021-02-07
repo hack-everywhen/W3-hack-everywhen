@@ -11,4 +11,5 @@ mongoose.connect('mongodb://localhost/map_crime', {useNewUrlParser: true});
 mongoose.Promise = Promise;
 exports.report = require("./report")
 exports.reporter = require("./reporter")
+exports.users = require("./user");
 module.exports = exports
